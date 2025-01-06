@@ -14,14 +14,16 @@ function getDOMElement(name = "div", className = "") {
 
 // input generator
 
-function getInput(type = "text", placeholder = "") {
+function getInput(labelText, type = "text", placeholder = "") {
+  const newLabel = document.createElement("label");  
+  newLabel.textContent = labelText;
   const newInput = document.createElement("input");
   newInput.type = type;
   if (placeholder) {
     newInput.placeholder = placeholder;
   }
-
-  return newInput;
+  newLabel.append(newInput)
+  return newLabel;
 }
 
 // DOM generation
