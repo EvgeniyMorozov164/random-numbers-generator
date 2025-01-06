@@ -97,3 +97,11 @@ const genBtn = getButton("submit", "btn", "Generate");
 
 form.append(inputList, genBtn);
 aside.append(asideH2, form);
+
+// display
+
+const displayH2 = getDOMElement("h2", "heading2");
+displayH2.textContent = "Display";
+
+
+displayNumsDiv.append(displayH2);
