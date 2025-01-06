@@ -1,6 +1,7 @@
 const randomNumsArr = []; // random numbers storage
 const root = document.querySelector("body");
 
+
 // DOM element generator
 function getDOMElement(name = "div", className = "") {
   const newDOMElement = document.createElement(name);
@@ -108,3 +109,10 @@ displayH2.textContent = "Display";
 
 
 displayNumsDiv.append(displayH2);
+
+// generate numbers
+
+function getRandomIntNumber(quantity, min, max) {  
+  return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
