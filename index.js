@@ -30,3 +30,9 @@ const header = getDOMElement("header", "header");
 const main = getDOMElement("main", "main");
 const footer = getDOMElement("footer", "footer");
 root.append(header, main, footer);
+
+// header
+
+const heading1 = getDOMElement("h1", "heading1");
+heading1.textContent = "RANDOM NUMBERS GENERATOR";
+header.append(heading1);
