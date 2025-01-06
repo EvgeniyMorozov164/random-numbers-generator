@@ -25,7 +25,7 @@ body {
   width: 100%;
   height: calc(100vh - 100px);
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between;  
 }
 
 .aside {
@@ -107,6 +107,15 @@ body {
   height: 100%;
   border: double 4px aqua;
   position: relative;
+}
+
+.numUl {
+  width: 100%;
+  height: 98%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  overflow-y:scroll;
 }
 
 .footer {

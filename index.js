@@ -107,12 +107,40 @@ aside.append(asideH2, form);
 const displayH2 = getDOMElement("h2", "heading2");
 displayH2.textContent = "Display";
 
+const numList = getDOMElement("ul", "numUl");
 
-displayNumsDiv.append(displayH2);
+displayNumsDiv.append(displayH2, numList);
 
 // generate numbers
 
 function getRandomIntNumber(quantity, min, max) {  
-  return Math.floor(Math.random() * (max - min + 1) + min);
+    for (let i = 0; i < quantity; i++) {
+    let num = Math.floor(Math.random() * (max - min + 1) + min);
+    randomNumsArr.push(num);
+  }
+  
+  return randomNumsArr;
 }
+
+
+function renderList(array) {  
+  for (num of array) {
+    const newNumLiItem = getListItem("numListItem", num);
+    numList.append(newNumLiItem);
+  }
+  return numList;
+}
+
+// event
+
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  randomNumsArr.length = 0;
+  const quantity = Number(numQuantity.firstChild.children[1].value);
+  const minimal = Number(min.firstChild.children[1].value);
+  const maximal = Number(max.firstChild.children[1].value);
+  console.log("click",quantity, minimal, maximal);
+  getRandomIntNumber(quantity, minimal, maximal);
+  renderList(randomNumsArr);
+})
 
