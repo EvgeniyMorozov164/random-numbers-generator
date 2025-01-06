@@ -35,10 +35,12 @@ function getInput(labelText, type = "text", inputClass = "input", placeholder = 
 
 // list item generator 
 
-function getListItem(className) {
+function getListItem(className, textContent = "") {
   const liItem = document.createElement("li");
   liItem.classList.add(className);
-
+  if (textContent) {
+    liItem.textContent = textContent;
+  }
   return liItem;
 }
 
@@ -92,10 +94,11 @@ const max = getInput("MAX", "tel");
 liItem3.append(max);
 
 inputList.append(liItem1, liItem2, liItem3);
-
+const btnContainer = getDOMElement("div", "btnContainer");
 const genBtn = getButton("submit", "btn", "Generate");
-
-form.append(inputList, genBtn);
+const clearBtn = getButton("button", "btn", "Clear");
+btnContainer.append(genBtn, clearBtn);
+form.append(inputList, btnContainer);
 aside.append(asideH2, form);
 
 // display
