@@ -14,16 +14,23 @@ function getDOMElement(name = "div", className = "") {
 
 // input generator
 
-function getInput(labelText, type = "text", placeholder = "") {
+function getInput(labelText, type = "text", inputClass = "input", placeholder = "Type here", labelClass = "label", inputContainerClass = "inputContainer") {
+  const inputContainer = document.createElement("p");
+  inputContainer.classList.add(inputContainerClass)
   const newLabel = document.createElement("label");  
   newLabel.textContent = labelText;
+  newLabel.classList.add(labelClass);
+  const br = document.createElement("br");
   const newInput = document.createElement("input");
   newInput.type = type;
   if (placeholder) {
     newInput.placeholder = placeholder;
   }
-  newLabel.append(newInput)
-  return newLabel;
+  newInput.classList.add(inputClass);
+  inputContainer.append(newLabel);
+  newLabel.append(br, newInput);
+
+  return inputContainer;
 }
 
 // list item generator 
@@ -35,6 +42,16 @@ function getListItem(className) {
   return liItem;
 }
 
+// Button generator
+
+function getButton(type = "button", className = "button", text = "") {
+  const btn = document.createElement("button");
+  btn.type = type;
+  btn.classList.add(className);
+  btn.textContent = text;
+
+  return btn;
+}
 // DOM generation
 
 const header = getDOMElement("header", "header");
@@ -57,7 +74,26 @@ main.append(aside, displayNumsDiv);
 // aside
 
 const asideH2 = getDOMElement("h2", "heading2");
-asideH2.textContent = "INPUT";
+asideH2.textContent = "Input";
 
+const form = getDOMElement("form", "form");
 const inputList = getDOMElement("ul", "inputList")
-aside.append(asideH2, inputList);
+
+const liItem1 = getListItem("listItem");
+const numQuantity = getInput("Numbers Quantity", "tel")
+liItem1.append(numQuantity);
+
+const liItem2 = getListItem("listItem");
+const min = getInput("MIN", "tel");
+liItem2.append(min);
+
+const liItem3 = getListItem("listItem");
+const max = getInput("MAX", "tel");
+liItem3.append(max);
+
+inputList.append(liItem1, liItem2, liItem3);
+
+const genBtn = getButton("submit", "btn", "Generate");
+
+form.append(inputList, genBtn);
+aside.append(asideH2, form);

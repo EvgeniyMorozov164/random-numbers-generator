@@ -33,6 +33,7 @@ body {
   height: 100%;
   border: double 4px aqua;
   position: relative;
+  padding-left: 5px;
 }
 
 .heading2 {
@@ -42,6 +43,58 @@ body {
   top: -10px;
   left: 40%;
   background-color: rgb(4, 65, 231);
+}
+
+.label {
+  color: yellow;
+  font-weight: bold;
+}
+
+.input {
+  margin: 5px 0 10px 0;
+  height: 25px;
+  background-color:rgb(4, 65, 231);
+  border: none;
+  width: 100%;
+}
+
+.input::placeholder {
+  color: aqua;
+  font-size: 17px;
+}
+
+.input:focus,
+.input:focus::placeholder {
+  outline: none;
+  background-color: rgb(147, 172, 197);
+  color: black;
+}
+
+.btn {
+  height: 25px;
+  width: 85px;
+  border: none;
+  background-color: white;
+  cursor: pointer;
+  font-size: 17px;
+  color:rgb(190, 187, 187);
+  box-shadow: 10px 10px 0 black;
+  transition: all 1 ease;
+}
+
+.btn:hover {
+  background-color: yellow;
+  color: red;
+}
+
+.btn::first-letter,
+.btn:hover::first-letter {
+  color: black;
+}
+
+.btn:active {
+  transform: translate(10px, 10px);
+  box-shadow: 0 0 0 black;
 }
 
 .displayNums {
