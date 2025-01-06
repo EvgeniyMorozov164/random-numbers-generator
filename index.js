@@ -24,3 +24,9 @@ function getInput(type = "text", placeholder = "") {
   return newInput;
 }
 
+// DOM generation
+
+const header = getDOMElement("header", "header");
+const main = getDOMElement("main", "main");
+const footer = getDOMElement("footer", "footer");
+root.append(header, main, footer);
