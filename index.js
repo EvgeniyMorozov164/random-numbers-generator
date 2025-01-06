@@ -26,6 +26,15 @@ function getInput(labelText, type = "text", placeholder = "") {
   return newLabel;
 }
 
+// list item generator 
+
+function getListItem(className) {
+  const liItem = document.createElement("li");
+  liItem.classList.add(className);
+
+  return liItem;
+}
+
 // DOM generation
 
 const header = getDOMElement("header", "header");
@@ -50,3 +59,5 @@ main.append(aside, displayNumsDiv);
 const asideH2 = getDOMElement("h2", "heading2");
 asideH2.textContent = "INPUT";
 
+const inputList = getDOMElement("ul", "inputList")
+aside.append(asideH2, inputList);
