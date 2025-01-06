@@ -50,8 +50,7 @@ body {
 }
 
 .label {
-  color: yellow;
-  font-weight: bold;
+  color: yellow;  
 }
 
 .input {
@@ -129,7 +128,15 @@ body {
 .footer {
   width: 100%;
   height: 50px;
+  padding: 0 10px;
   display: flex;
+  justify-content: space-between;
+  align-items: center;
   background-color: black;
   color: lightslategray;
+}
+
+.link {
+  text-decoration: none;
+  color: inherit;
 }

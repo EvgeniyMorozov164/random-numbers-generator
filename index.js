@@ -111,6 +111,24 @@ const numList = getDOMElement("ul", "numUl");
 
 displayNumsDiv.append(displayH2, numList);
 
+
+// footer
+
+const gitLinkContainer = getDOMElement("div", "link-container");
+const gitLink = getDOMElement("a", "link");
+gitLink.href = "https://github.com/EvgeniyMorozov164";
+gitLink.textContent = "My GitHub";
+gitLink.target = "_blank";
+gitLink.title = '(")_(O_o)_(") Бу! Испугался?';
+gitLinkContainer.append(gitLink); 
+
+const yearContainer = getDOMElement("div", "year-container");
+const year = getDOMElement("p", "year");
+year.textContent = new Date().getFullYear();
+year.title = "Current year. For Sure.";
+yearContainer.append(year);
+footer.append(gitLinkContainer, yearContainer);
+
 // generate numbers
 
 function getRandomIntNumber(quantity, min, max) {  
