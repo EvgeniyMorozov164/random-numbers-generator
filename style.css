@@ -32,12 +32,23 @@ body {
   width: 40%;
   height: 100%;
   border: double 4px aqua;
+  position: relative;
+}
+
+.heading2 {
+  display: inline-block;
+  padding: 0 5px;
+  position: relative;
+  top: -10px;
+  left: 40%;
+  background-color: rgb(4, 65, 231);
 }
 
 .displayNums {
   width: 59%;
   height: 100%;
   border: double 4px aqua;
+  position: relative;
 }
 
 .footer {

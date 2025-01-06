@@ -37,8 +37,14 @@ const heading1 = getDOMElement("h1", "heading1");
 heading1.textContent = "RANDOM NUMBERS GENERATOR";
 header.append(heading1);
 
-//main
+// main
 
 const aside = getDOMElement("aside", "aside");
 const displayNumsDiv = getDOMElement("div", "displayNums");
 main.append(aside, displayNumsDiv);
+
+// aside
+
+const asideH2 = getDOMElement("h2", "heading2");
+asideH2.textContent = "INPUT";
+
