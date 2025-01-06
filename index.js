@@ -131,7 +131,14 @@ function renderList(array) {
   return numList;
 }
 
-// event
+function clear() {
+  numQuantity.firstChild.children[1].value = "";
+  min.firstChild.children[1].value = "";
+  max.firstChild.children[1].value = "";
+  numList.innerHTML = "";
+  randomNumsArr.length = 0;
+}
+// events
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -142,5 +149,6 @@ form.addEventListener("submit", (e) => {
   console.log("click",quantity, minimal, maximal);
   getRandomIntNumber(quantity, minimal, maximal);
   renderList(randomNumsArr);
-})
+});
 
+clearBtn.addEventListener("click", clear);

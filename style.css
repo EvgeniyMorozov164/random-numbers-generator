@@ -109,12 +109,13 @@ body {
   position: relative;
 }
 
-.numUl {
-  width: 100%;
+.numUl {  
   height: 98%;
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 4px;
   overflow-y:scroll;
 }
 
