@@ -14,7 +14,7 @@ body {
 }
 
 .header {
-  height: 100px;
+  height: 50px;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -23,8 +23,21 @@ body {
 
 .main {
   width: 100%;
-  height: calc(100vh - 100px - 50px);
+  height: calc(100vh - 100px);
   display: flex;
+  justify-content: space-between;
+}
+
+.aside {
+  width: 40%;
+  height: 100%;
+  border: double 4px aqua;
+}
+
+.displayNums {
+  width: 59%;
+  height: 100%;
+  border: double 4px aqua;
 }
 
 .footer {
